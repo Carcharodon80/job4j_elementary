@@ -1,18 +1,21 @@
 package ru.job4j.array;
 
+/**
+ * Получает массив строк и null, null перемещает в конец массива
+ */
 public class Defragment {
     public static String[] compress(String[] array) {
-        for (int index = 0; index < array.length; index++) {            //перебирает массив и
-            if (array[index] == null) {                                 //находит null
-                for (int notNullIndex = index + 1; notNullIndex < array.length; notNullIndex++) {
-                    if (array[notNullIndex] != null) {                  //во втором цикле идет дальше по массиву,
-                        array[index] = array[notNullIndex];             //находит не null, меняет их местами,
-                        array[notNullIndex] = null;                     //выходит из второго цикла
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == null) {
+                for (int j = i + 1; j < array.length; j++) {
+                    if (array[j] != null) {
+                        array[i] = array[j];
+                        array[j] = null;
                         break;
                     }
                 }
             }
-            System.out.print(array[index] + " ");
+            System.out.print(array[i] + " ");
         }
         return array;
     }
@@ -21,8 +24,8 @@ public class Defragment {
         String[] input = {"I", null, "wanna", null, "be", null, "compressed"};
         String[] compressed = compress(input);
         System.out.println();
-        for (int index = 0; index < compressed.length; index++) {
-            System.out.print(compressed[index] + " ");
+        for (int i = 0; i < compressed.length; i++) {
+            System.out.print(compressed[i] + " ");
         }
     }
 }

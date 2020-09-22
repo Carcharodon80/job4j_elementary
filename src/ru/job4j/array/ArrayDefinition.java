@@ -8,13 +8,11 @@ public class ArrayDefinition {
         System.out.println("Величина массива surnames = " + surnames.length);
         float[] prices = new float[40];
         System.out.println("Величина массива prices = " + prices.length);
-
         String[] names = new String[4];
         names[0] = "Thor";
         names[1] = "Hulk";
         names[2] = "Iron Man";
         names[3] = "Captain America";
-
         System.out.println(names[0]);
         System.out.println(names[1]);
         System.out.println(names[2]);

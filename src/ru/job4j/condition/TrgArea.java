@@ -1,9 +1,12 @@
 package ru.job4j.condition;
 
+/**
+ * Вычисляем площадь треугольника по формуле Герона
+ */
 public class TrgArea {
     public static double area(double a, double b, double c) {
-        double p = (a + c + c) / 2;      //вычисляем полупериметр треугольника
-        double rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));    //формула Герона
+        double p = (a + c + c) / 2;
+        double rsl = Math.sqrt(p * (p - a) * (p - b) * (p - c));
         return rsl;
     }
 

@@ -5,22 +5,21 @@ public class Merge {
         int[] rsl = new int[left.length + right.length];
         int indexLeft = 0;
         int indexRight = 0;
-        for (int i = 0; i < rsl.length; i++) {                      //начинаем заполнять конечный массив
-            if (indexLeft >= left.length) {                         //если левый массив закончился - берем число из правого
+        for (int i = 0; i < rsl.length; i++) {
+            if (indexLeft >= left.length) {
                 rsl[i] = right[indexRight];
                 indexRight++;
-            } else if (indexRight >= right.length) {                //если правый массив закончился - берем из левого
+            } else if (indexRight >= right.length) {
                 rsl[i] = left[indexLeft];
                 indexLeft++;
-            } else if (left[indexLeft] <= right[indexRight]) {      //если левое число меньше - берем левое число...
+            } else if (left[indexLeft] <= right[indexRight]) {
                 rsl[i] = left[indexLeft];
                 indexLeft++;
-            } else {                                                //...иначе - берем правое
+            } else {
                 rsl[i] = right[indexRight];
                 indexRight++;
             }
         }
-
         return rsl;
     }
 }
