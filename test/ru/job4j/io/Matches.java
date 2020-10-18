@@ -14,6 +14,10 @@ public class Matches {
                 System.out.println("На столе " + matches + " спичек. Игрок 2, возьмите от 1 до 3 спичек.");
             }
             int count = Integer.valueOf(input.nextLine());
+            if (count < 1 || count > 3) {
+                System.out.println("Ошибка. Надо взять от 1 до 3 спичек");
+                continue;
+            }
             matches -= count;
             tour++;
         }
